@@ -1,2 +1,3 @@
-# restaurant-website
-A demo for a restaurant website build
+# A Demo Restaurant Webiste
+
+An exhibit for my HTML and Sass abilities.
