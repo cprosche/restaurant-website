@@ -2,10 +2,4 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/user/public_html/
-    - /bin/cp -R restaurant-website/img $DEPLOYPATH
-    - /bin/cp index.html $DEPLOYPATH
-    - /bin/cp menu.html $DEPLOYPATH
-    - /bin/cp location.html $DEPLOYPATH
-    - /bin/cp css/style.css $DEPLOYPATH
-    - /bin/cp css/menu-style.css $DEPLOYPATH
-    - /bin/cp css/location-style.css $DEPLOYPATH
+    - /bin/cp -R restaurant-website $DEPLOYPATH
