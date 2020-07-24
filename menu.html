@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!--external links-->
     <link rel="stylesheet" href="css/menu-style.css" />
+    <script src="js/navbar.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/js/all.min.js"></script>
 
     <link rel="icon" href="img/pizza-icon.PNG" />
@@ -14,15 +15,22 @@
     <!--start header-->
     <header>
       <h2>Gen's Pizza</h2>
-      <nav>
+      <nav id="header-nav">
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="menu.html">Menu</a></li>
           <li><a href="location.html">Location</a></li>
         </ul>
       </nav>
+      <a href="#" class="toggle" id="toggle">
+        <span class="burger-bar"></span>
+        <span class="burger-bar"></span>
+        <span class="burger-bar"></span>
+      </a>
       <a href="tel:8157421496">
-        <button><i class="fas fa-phone fa-2x"></i> (815) 742-1496</button>
+        <button id="header-button">
+          <i class="fas fa-phone fa-2x"></i> (815) 742-1496
+        </button>
       </a>
     </header>
     <!--end header-->

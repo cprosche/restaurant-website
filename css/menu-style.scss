@@ -1,55 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Carter+One");
+//import globals
+@import "globals";
 
-/* Variables */
-$primary-color: white;
-$primary-color-more-opacity: rgba(255, 255, 255, 0.6);
-$secondary-color: white; //body background
-$accent-color: red; //link highlighting, borders
-$text-color: black;
-
-$header-font: "Permanent Marker", cursive;
-$secondary-font: "Carter One", cursive;
-
-/*mixins*/
-@mixin primaryButton {
-  font-family: $secondary-font;
-  border: 1.5px solid $accent-color;
-  background-color: $primary-color-more-opacity;
-  padding: 0.5em;
-  text-transform: uppercase;
-  font-weight: bold;
-  border-radius: 7px;
-  width: 150px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: space-evenly;
-  &:hover {
-    background-color: $primary-color;
-  }
-}
-
-@mixin imageHover($text) {
-  font-family: $header-font;
-  padding-top: 10px;
-  padding-left: 20px;
-  font-size: 2em;
-  color: $text-color;
-
-  &:hover::after {
-    content: $text;
-  }
-}
-
-/* styling */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  text-decoration: none;
-}
-
+//main styling
 body {
   background-color: $secondary-color;
   width: 100vw;
@@ -63,6 +15,7 @@ body {
     border-bottom: 2px solid $accent-color;
     font-family: $header-font;
     overflow: hidden;
+    @include stickyHeader();
     /*start navbar link list formatting*/
     ul {
       list-style: none;
@@ -81,6 +34,24 @@ body {
         }
       }
     } /*end navebar link list formatting*/
+
+    .toggle {
+      display: none; //change to none
+      position: absolute;
+      right: 30px;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 40px;
+      height: 30px;
+
+      .burger-bar {
+        height: 3px;
+        width: 100%;
+        background-color: $accent-color;
+        border-radius: 500px;
+      }
+    }
+
     button {
       @include primaryButton();
       &:hover {
@@ -91,6 +62,7 @@ body {
 
   /*start menu formatting*/
   .menu {
+    margin-top: 70px;
     h1 {
       font-family: $header-font;
       font-size: 3em;
@@ -140,6 +112,7 @@ body {
 
     background-color: $primary-color;
     border-top: 2px solid $accent-color;
+    text-align: center;
     h2 {
       font-family: $header-font;
     }
@@ -180,11 +153,29 @@ body {
     }
   }
 }
-@media screen and (max-width: 600px) {
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    .toggle {
+      display: flex !important;
+    }
+    nav {
+      display: none !important;
+    }
+    li {
+      display: flex !important;
+      flex-direction: column !important;
+      padding: 10px !important;
+    }
+    button {
+      display: none !important;
+    }
+  }
   .footer-container {
     flex-direction: column;
-    height: 45vh !important;
+    height: 55vh !important;
   }
+
   .about {
     flex-direction: column;
     text-align: center;
@@ -192,7 +183,14 @@ body {
       width: 90vw !important;
     }
   }
+
   .info-section {
     grid-template-columns: repeat(1, 1fr) !important;
+  }
+  .active {
+    display: flex !important;
+  }
+  .active-button {
+    display: inline-flex !important;
   }
 }

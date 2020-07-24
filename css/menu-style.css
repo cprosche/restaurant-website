@@ -1,8 +1,8 @@
+/*import font*/
 @import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Carter+One");
 /* Variables */
 /*mixins*/
-/* styling */
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -38,6 +38,9 @@ body header {
   border-bottom: 2px solid red;
   font-family: "Permanent Marker", cursive;
   overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
   /*start navbar link list formatting*/
   /*end navebar link list formatting*/
 }
@@ -61,6 +64,28 @@ body header ul li a {
 
 body header ul li a:hover {
   color: red;
+}
+
+body header .toggle {
+  display: none;
+  position: absolute;
+  right: 30px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 40px;
+  height: 30px;
+}
+
+body header .toggle .burger-bar {
+  height: 3px;
+  width: 100%;
+  background-color: red;
+  border-radius: 500px;
 }
 
 body header button {
@@ -89,6 +114,10 @@ body header button:hover {
 
 body header button:hover {
   background-color: red;
+}
+
+body .menu {
+  margin-top: 70px;
 }
 
 body .menu h1 {
@@ -153,6 +182,7 @@ body .footer-container {
           align-items: center;
   background-color: white;
   border-top: 2px solid red;
+  text-align: center;
 }
 
 body .footer-container h2 {
@@ -210,13 +240,40 @@ body .rdm-bar img {
   margin-top: 10px;
 }
 
-@media screen and (max-width: 600px) {
+@media (max-width: 768px) {
+  header {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  header .toggle {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+  }
+  header nav {
+    display: none !important;
+  }
+  header li {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -webkit-box-orient: vertical !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: column !important;
+            flex-direction: column !important;
+    padding: 10px !important;
+  }
+  header button {
+    display: none !important;
+  }
   .footer-container {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    height: 45vh !important;
+    height: 55vh !important;
   }
   .about {
     -webkit-box-orient: vertical;
@@ -231,6 +288,16 @@ body .rdm-bar img {
   .info-section {
     -ms-grid-columns: (1fr)[1] !important;
         grid-template-columns: repeat(1, 1fr) !important;
+  }
+  .active {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+  }
+  .active-button {
+    display: -webkit-inline-box !important;
+    display: -ms-inline-flexbox !important;
+    display: inline-flex !important;
   }
 }
 /*# sourceMappingURL=menu-style.css.map */
