@@ -2,4 +2,4 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/mammothu/restaurant.roschedigitalmarketing.com/public_html/
-    - /bin/cp -R restaurant-website $DEPLOYPATH
+    - /bin/cp -R * $DEPLOYPATH
